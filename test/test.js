@@ -20,6 +20,11 @@ describe('Fizzbuzz returns values for different kinds of numbers', function () {
     assert.equal(result, "Fizz");
   });
 
+  it('should return "Buzz" for numbers divisible by 5', function () {
+    let result = fizz(10);
+    assert.equal(result, "Buzz");
+  });
+
   // Your Tests Here
 });
 
