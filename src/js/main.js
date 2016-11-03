@@ -13,13 +13,13 @@ function fizz (number) {
 function fizzBuzz (start, end) {
   for (var count = start; count <= end; count++) {
     if (count % 15 === 0) {
-      return ("FizzBuzz");
+      console.log("FizzBuzz");
     } else if (count % 5 === 0) {
-      return ("Buzz");
+      console.log("Buzz");
     } else if (count % 3 === 0) {
-      return ("Fizz");
+      console.log("Fizz");
     } else {
-      return (count)
+      console.log(count)
     }
   }
 };
