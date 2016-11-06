@@ -8,7 +8,7 @@ class GildedRose {
   tick () {
     if (this.name.includes("Aged")) {
       this.agedBrie();
-    } else if (this.name.includes("Sulfuras")) {
+    } else if (this.name.includes("Sulfuras", "Hand of Ragnaros")) {
       this.legendary();
     } else if (this.name.includes("Backstage")) {
       this.backStage();
@@ -19,9 +19,18 @@ class GildedRose {
     }
   }
 
-  agedBrie () {}
+  agedBrie () {
+    this.sellIn--;
+    this.quality++;
+    if (this.quality > 50) {
+      this.quality = 50;
+    }
 
-  legendary () {}
+  }
+
+  legendary () {
+    this.quality = 80;
+  }
 
   backStage () {}
 
