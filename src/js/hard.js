@@ -22,8 +22,8 @@ class GildedRose {
   agedBrie () {
     this.sellIn--;
     this.quality++;
-    // if (this.sellIn <= 0) {
-    //   this. quality = this. quality + 2;
+    // if (this.sellIn = 0) {
+    //   this.quality = this.quality + 2;
     // }else
     if (this.quality > 50) {
       this.quality = 50;
