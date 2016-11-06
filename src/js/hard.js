@@ -11,7 +11,7 @@ class GildedRose {
     } else if (this.name.includes("Sulfuras", "Hand of Ragnaros")) {
       this.legendary();
     } else if (this.name.includes("Backstage")) {
-      this.backStage();
+      this.concert();
     } else if (this.name.includes("Conjured")) {
       this.conjured();
     } else {
@@ -22,19 +22,46 @@ class GildedRose {
   agedBrie () {
     this.sellIn--;
     this.quality++;
+    // if (this.sellIn <= 0) {
+    //   this. quality = this. quality + 2;
+    // }else
     if (this.quality > 50) {
       this.quality = 50;
     }
-
   }
 
   legendary () {
     this.quality = 80;
   }
 
-  backStage () {}
+  concert () {
+    this.sellIn--;
+    if (this.sellIn < 0) {
+      this.quality = 0;
+    } else if (this.sellIn < 5) {
+      this.quality = this.quality + 3;
+    } else if (this.sellIn < 10) {
+      this.quality = this.quality + 2;
+    } else {
+      this.quality++;
+    }
+    if (this.quality > 50){
+      this.quality = 50;
+    }
+  }
 
-  conjured () {}
+  conjured () {
+    this.sellIn--;
+    if (this.sellIn > 0) {
+      this.quality = this.quality - 2;
+    }
+    if (this.sellIn < 0) {
+      this.quality = this.quality - 4;
+    }
+    if (this.quality < 0) {
+      this.quality = 0
+    }
+  }
 
   normal () {
     this.sellIn--;
